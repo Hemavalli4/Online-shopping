@@ -1,0 +1,22 @@
+﻿@model IEnumerable<OnlineMVC.Models.Products>
+
+@{
+    ViewBag.Title = "SearchByCategoryname";
+}
+
+ 
+@foreach (var item in Model) {
+    
+        <div class="row row">
+            <img src="~/Images/@item.Picture" width="200" height="200" />
+            <a href="DisplayDetails?id=@item.ProductId"></a>
+        
+        </div>
+        <div  class="col col-md-4">
+            <p><b>Product Name:</b>@item.ProductName</p>
+            <p><b>Price:</b>@item.Price</p>
+            <p><b>Color:</b>@item.Color</p>
+            <p><b>Brand:</b>@item.Brand</p>
+        </div>
+        <input type="button" class="btn btn-primary" value="Add to cart" />
+}

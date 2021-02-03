@@ -1,0 +1,28 @@
+﻿@model IEnumerable<OnlineMVC.Models.ProCategory>
+
+@{
+    ViewBag.Title = "DisplayCategory";
+}
+
+<h2>DisplayCategory</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            <a href="SearchByCategoryname?name=@item.CategoryName">
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </a>
+        </td>
+    </tr>
+}
+
+</table>

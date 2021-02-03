@@ -1,0 +1,37 @@
+﻿@model OnlineMVC.Models.Products
+
+@{
+    ViewBag.Title = "GetProductsById";
+}
+
+   @using (Html.BeginForm("AddToCart", "Online"))
+   {
+@*<form method="post" action="GetProductsById"></form>*@
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            <img src="~/Images/@Model.Picture" width="200" height="200" />
+        </dd>
+        <div class="col col-md-4">
+            <p><b>ProductName:</b>@Model.ProductName</p>
+            <p><b>Price:</b>@Model.Price</p>
+            <p><b>Brand:</b>@Model.Brand</p>
+
+        </div>
+        <dt></dt>
+        @Html.HiddenFor(model => model.ProductId)
+        @Html.HiddenFor(model => model.ProductName)
+        @Html.HiddenFor(model => model.Picture)
+        @Html.HiddenFor(model => model.Price)
+        @Html.HiddenFor(model => model.Brand)
+
+
+    </dl>
+    <form method="post" action="AddToCart">
+        <input type="submit" class="btn btn-success" value="Add To Cart">
+       
+    </form>
+</div>
+   }
+
